@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-white: #ffffff;
@@ -11,13 +12,36 @@
   --color-blue-200: #93c5fd;
   --color-blue-400: #60a5fa;
   --color-blue-500: #3b82f6;
+  --color-dark-bg: #101214;
   --color-dark-secondary: #1d1f21;
   --color-dark-tertiary: #3b3d40;
   --color-blue-primary: #0275ff;
   --color-stroke-dark: #2d3135;
 }
 
+@theme dark {
+  --color-white: #101214;
+  --color-gray-100: #1f2937;
+  --color-gray-200: #374151;
+  --color-gray-300: #4b5563;
+  --color-gray-500: #9ca3af;
+  --color-gray-700: #d1d5db;
+  --color-gray-800: #e5e7eb;
+  --color-blue-200: #60a5fa;
+  --color-blue-400: #3b82f6;
+  --color-blue-500: #2563eb;
+  --color-dark-bg: #ffffff;
+  --color-dark-secondary: #f3f4f6;
+  --color-dark-tertiary: #e5e7eb;
+  --color-blue-primary: #1d4ed8;
+  --color-stroke-dark: #e5e7eb;
+}
+
 @layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
   *,
   *::before,
   *::after {
